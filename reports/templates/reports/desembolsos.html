@@ -1,0 +1,47 @@
+
+{% extends "reports/main.html" %}
+{% load static %}
+{% block content  %}
+<div class="dashboard container">
+    <div class="row">
+        <div class="col-sm-12 contenidoCol">
+            <form method="POST" onsubmit="openLoader()">
+                {% csrf_token %}
+                <div class="card">
+                    <div class="card-header">Desembolsos</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Selecciona los rangos de fechas</h5>
+                        <div class= containercenter>
+                            <input type="date" class="calendario"  name="fecha_inicio">
+                            <input type="date" class="calendario"  name="fecha_final">
+                            <p class="card-title">Ingrese nombre del archivo</p>
+                            <input type="text" class="calendario"  name="nombre_archivo" placeholder="Nombre del archivo">
+                        </div>
+
+                        <p class="card-text">Seleccione el tipo de archivo requerido.</p>
+                        <select class="form-select calendario" aria-label="Default select example"  name="tipo_archivo">
+                            <option value="1">CSV</option>
+                            <option value="2">XLSX</option>
+                        </select>
+                        <br>
+                        {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        <div id="loadingModal" style="display: None;">
+                            <div class="spinner-grow text-success" role="status">
+                        </div>
+                        <br>
+                        <br>
+                        </div>  
+                        <input href="#" class="btn btn-primary btnverde" type="submit" value="Descargar"> 
+                    </div>
+                </div>  
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock  %}s

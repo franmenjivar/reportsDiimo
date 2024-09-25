@@ -1,0 +1,30 @@
+{% load static %}
+
+<nav>
+    <ul>
+        <li>
+            <a href="/" class="linkLista imgbackground">
+                <img src="{% static 'images/logo.svg' %}" alt="logo" class="imagenLogo">
+                <span style="color:white;">BI Hub</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'home' %}" class="linkLista">
+                <i class="fas fa-home"></i>
+                <span class="nav_item">Home</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'docs' %}" class="linkLista">
+                <i class="fas fa-solid fa-book"></i>
+                <span class="nav_item">Documentacion</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'logout' %}" class="linkLista Logout" >
+                <i class="fas fa-solid fa-right-from-bracket"></i>
+                <span class="nav_item">Logout</span>
+            </a>
+        </li>
+    </ul>
+</nav>

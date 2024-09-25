@@ -1,0 +1,29 @@
+
+{% extends "reports/main.html" %}
+{% load static %}
+{% block content  %}
+<div class="dashboard container">
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 contenidoCol">
+            <div class="card" style="width: 20rem;height:380px;text-justify: inter-word;">
+                <img src="{% static 'images/icon1.svg' %}" class="card-img-top cardImg" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Desembolsos</h5>
+                <p class="card-text">Este reporte enlista los desembolsos realizados en el periodo de tiempo selecciconado.</p>
+                <a href="{% url 'desem' %}" class="btn btn-primary btnverde">Obtener Reporte</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 contenidoCol">
+            <div class="card" style="width: 20rem;height:380px;text-justify: inter-word;">
+                <img src="{% static 'images/img1.svg' %}" class="card-img-top cardImg" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">CXC</h5>
+                <p class="card-text">Este reporte extrae las cuentas por cobrar desde junio 2021 a la fecha seleccionada.</p>
+                <a href="{% url 'CXC' %}" class="btn btn-primary btnverde">Obtener Reporte</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock  %}
